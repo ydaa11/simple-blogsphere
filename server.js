@@ -4,32 +4,39 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import methodOverride from "method-override";
 
+// Load environment variables from the .env file
 dotenv.config();
 
 const app = express();
 
-// Middleware
+// Middleware configuration
+// Allows the application to process form data
 app.use(express.urlencoded({ extended: true }));
+
+// Allows PUT and DELETE requests through HTML forms
 app.use(methodOverride("_method"));
+
+// Serves static files such as CSS
 app.use(express.static("public"));
 
-// EJS configuration
+// Configure EJS as the view engine
 app.set("view engine", "ejs");
 
-// Routes
+// Import and register post routes
 import postRoutes from "./routes/posts.js";
 app.use("/posts", postRoutes);
 
+// Redirect the homepage to the posts page
 app.get("/", (req, res) => {
     res.redirect("/posts");
 });
 
-// Not found page
+// Handle requests to pages that do not exist
 app.use((req, res) => {
     res.status(404).render("notfound");
 });
 
-// MongoDB connection
+// Connect the application to MongoDB Atlas
 mongoose.connect(process.env.MONGODB_URI)
     .then(() => {
         console.log("MongoDB Connected");
@@ -38,7 +45,7 @@ mongoose.connect(process.env.MONGODB_URI)
         console.error("MongoDB connection error:", err);
     });
 
-// Start server
+// Start the server using the configured port
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
