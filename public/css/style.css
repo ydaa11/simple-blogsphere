@@ -1,0 +1,88 @@
+body {
+    background-color: #f8e8ff;
+    font-family: "Times New Roman", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #d8b4f8 !important;
+    padding: 15px;
+}
+
+.navbar-brand {
+    color: white !important;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* Main container */
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding-top: 40px;
+    text-align: center;
+}
+
+/* Cards */
+.card {
+    background-color: #ffd6e8;
+    border: none;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Titles */
+h1,
+h3 {
+    color: #8e44ad;
+    font-weight: bold;
+}
+
+/* Paragraphs */
+p {
+    color: #5e3370;
+    font-size: 16px;
+}
+
+/* Buttons */
+.btn {
+    border-radius: 10px;
+    padding: 8px 18px;
+    margin-top: 10px;
+}
+
+/* Primary button */
+.btn-primary {
+    background-color: #c084fc;
+    border: none;
+}
+
+/* Warning button */
+.btn-warning {
+    background-color: #ffb7d5;
+    border: none;
+    color: black;
+}
+
+/* Danger button */
+.btn-danger {
+    background-color: #ff8fab;
+    border: none;
+}
+
+/* Success button */
+.btn-success {
+    background-color: #d291ff;
+    border: none;
+}
+
+/* Forms */
+.form-control {
+    border-radius: 12px;
+    border: 1px solid #d8b4f8;
+    padding: 12px;
+}
